@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<style>
+
+body {
+  margin: 5px;
+  width:1350px;
+  /* position: fixed; */
+  font-family: "Garamond", sans-serif;
+  font-size:18px;
+}
+div.cont {
+	
+	padding: 35px;
+	box-sizing: border-box;
+	width: 100%;
+	/* border: solid #000000 30px; */
+  border-bottom: none;
+	padding: 25px;
+  
+}
+
+.nav2 {
+  margin-bottom: 60px;
+  padding: 0;
+  /* margin-top: 20px; */
+  width: 200px;
+  background-image: linear-gradient(grey, black);
+  position: fixed;
+  height: 80%;
+  
+ 
+}
+
+.nav2 a {
+  display: block;
+  color: black;
+  padding: 16px;
+  font-weight:bold;
+  font-size:16px;
+}
+ 
+.nav2 a.active {
+  background-color: #000;
+  color: white;
+}
+
+.nav2 a:hover:not(.active) {
+  background-color: #A8A9AD;
+  color: white;
+}
+
+div.body {
+  margin-left: 250px;
+  padding: 1px 16px;
+  height: 800px;
+  max-height: 540px;
+  overflow-y: scroll;
+}
+
+table td{
+  text-align: center;
+  font-size: 16px;
+}
+table th{
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
+}
+#princ{
+  color: rgb(255, 255, 255);
+    background: none 0px 0px repeat scroll rgb(136, 168, 37) !important;
+text-align: center;
+}
+#intr{
+  color: rgb(255, 255, 255);
+    background: none 0px 0px repeat scroll rgb(237, 140, 43) !important;
+    text-align: center;
+}
+#bal{
+  color: rgb(255, 255, 255);
+    background: none 0px 0px repeat scroll rgb(184, 32, 76) !important;
+    text-align: center;
+}
+
+</style>
+</head>
+<body >
+  <header style="font-size:26px; font-family: 'Open Sans'; font-weight:bold; border: 1px solid;padding: 12px; box-shadow: 5px 8px #888888; margin-bottom:10px; position: fixed; width: 98%; background-color: white;">LOAN CALCULATOR</header>
+<div class="cont">
+
+
+<div class="row" style="margin-top: 50px;">
+  <div class="nav2 col" >
+    <a  href="index.html"><i class="fa fa-home"> HOME</i></a>
+    <a   href="carloan.html"><i class="fa fa-car"> CAR LOAN</i> </a>
+    <a  href="homeloan.html"><i class="fa fa-building-o"> HOME LOAN</i></a>
+    <a class="active" href="#"><i class="fa fa-user"> PERSONAL LOAN</i></a>
+  </div>
+  <div class="body col">
+    <h2 class="text-primary" style="font-weight: bold;">Car Loan</h2>
+    <br>
+    <div class="row justify-content-center">
+      <div class="col-10">
+      <!-- <form action="" > -->
+          <div class="form-group form-group-lg">
+              <label>Enter Amount</label>
+              <input type="text" class="form-control" id="amount" placeholder="Enter Amount">
+              <div class=" my-4 w-100">
+                <input id="slider11" class="border-0 w-75" type="range" min="100000" max="20000000" step="100000" value="400000" />
+              <span class="font-weight-bold text-primary ml-2 mt-1 valueSpan"></span>
+            </div>
+          </div>
+          <div class="form-group form-group-lg">
+              <label>Enter Interest Rate</label>
+              <input type="text" class="form-control" id="interest" placeholder="Enter Interest Rate">
+              <div class=" my-4 w-100">
+                  <input id="slider12" class="border-0 w-75" type="range" min="1" max="20" step="0.25" value="17" />
+                <span class="font-weight-bold text-primary ml-2 mt-1 valueSpan2"></span>
+              </div>
+          </div>
+          <div class="form-group form-group-lg">
+              <label>Loan Tenure (In Months)</label>
+              <input type="text" class="form-control" id="tenure" placeholder="Enter Months">
+              <div class=" my-4 w-100">
+                <input id="slider13" class="border-0 w-75" type="range" min="12" max="360" step="6" value="48"  />
+              <span class="font-weight-bold text-primary ml-2 mt-1 valueSpan3"></span>
+            </div>
+          </div>
+          <div class="form-group form-group-lg">
+              <button type="submit" id="calc" class="btn btn-primary">Calculte</button>
+          </div>
+      <!-- </form> -->
+      <hr>
+      <div class="row mb-3" style="text-align: center;">
+        <div class="col">
+          <div class="card rounded" style="background-color: #87CEEB;">
+            <div class="card-body">
+              <h6 class="card-title">Load EMI</h6>
+              <p class="card-text" id="emmi"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+        <div class="card rounded" style="background-color: #00FF7F;">
+          <div class="card-body">
+            <h6 class="card-title">Total Interest Payble</h6>
+            <p class="card-text" id="inttr"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card rounded" style="background-color: #FF7F24;">
+          <div class="card-body">
+            <h6 class="card-title" >Total Payment(Principal + Interest)</h6>
+            <p class="card-text" id="tp"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+<hr>
+      <table id="loantbl" class="table table-striped table-hover ">
+        <tr>
+          <th>Month</th>
+          <th id="princ">Principal</th>
+          <th id="intr">Interest</th>
+          <th>Total</th>
+          <th id="bal">Balance</th>
+          <th>Loan Paid to Date</th>
+        </tr>
+      </table>
+  </div>
+  </div>
+  </div>
+
+</div>
+
+
+
+
+</div>
+<script>
+  $(document).ready(function() {
+
+const $valueSpan = $('.valueSpan2');
+const $value = $('#slider12');
+const $interest = $('#interest');
+$valueSpan.html($value.val()+" %");
+$interest.val($value.val());
+$value.on('input change', () => {
+  $interest.val($value.val());
+  $valueSpan.html($value.val()+" %");
+});
+
+const $valueSpan2 = $('.valueSpan');
+const $value2 = $('#slider11');
+const $interest2 = $('#amount');
+$valueSpan2.html("&#x20b9; "+$value2.val());
+$interest2.val($value2.val());
+$value2.on('input change', () => {
+  $interest2.val($value2.val());
+  $valueSpan2.html("&#x20b9; "+$value2.val());
+});
+
+const $valueSpan3 = $('.valueSpan3');
+const $value3 = $('#slider13');
+const $interest3 = $('#tenure');
+$valueSpan3.html($value3.val()+" Months/ "+$value3.val()/12+" years");
+$interest3.val($value3.val());
+$value3.on('input change', () => {
+  $interest3.val($value3.val());
+  $valueSpan3.html($value3.val()+" Months/ "+$value3.val()/12+" years");
+});
+
+$('#calc').click(function(){
+  // $("#loantbl tr").remove();
+  $("#loantbl").find("tr:gt(0)").remove(); 
+var i=0;
+  i++;
+  // console.log("Hello");
+  var tenure = document.getElementById('tenure').value;
+  var p = document.getElementById('amount').value;
+  var r = document.getElementById('interest').value;
+  var nr = r/12/100;
+  var n = tenure;
+var emi = (p*nr*(((1+nr)**n)/(((1+nr)**n)-1)));
+document.getElementById("emmi").innerHTML="&#x20b9; "+Math.round(emi);
+console.log((((1+nr)**n)/(((1+nr)**n)-1)));
+console.log(n**2);
+  console.log(nr);
+  var pp = p;
+  // console.log(Math.round(emi));
+var lap = 0;
+var inttr =0;
+  // const $tenure = $('#tenure');
+for(j=1;j<=tenure;j++){
+  var intr = ((pp*(r/100))/12);
+  inttr = inttr+intr;
+  var bal = pp-(emi-intr);
+  lap =lap+((emi-intr)/p)*100;
+  $('#loantbl').append('<tr id="row'+i+'"><td>Month '+j+'</td><td>&#x20b9;'+Math.round(emi-intr)+'</td><td>&#x20b9;'+Math.round(intr)+'</td><td>&#x20b9;'+Math.round(emi)+'</td><td>&#x20b9;'+Math.round(bal)+'</td><td>'+lap.toFixed(2)+' %</td></tr>');
+  pp=bal;
+}
+	
+document.getElementById("inttr").innerHTML="&#x20b9; "+Math.round(inttr);
+document.getElementById("tp").innerHTML="&#x20b9; "+(parseInt(p)+parseInt(inttr));
+
+});
+  });
+</script>
+</body>
+</html>
